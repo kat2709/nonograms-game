@@ -1,0 +1,486 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+  height: 100%;
+  background-image: url(./assets/images/sakura_bg.webp);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Macondo", cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 60px;
+  text-align: center;
+}
+
+.container-box {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+h4 {
+  align-items: center;
+  width: 130px;
+  padding: 5px 15px;
+  font-size: 20px;
+  border-radius: 20px;
+  background-color: white;
+  font-weight: bold;
+}
+
+.game-field {
+  opacity: 0.85;
+  height: fit-content;
+  background-color: white;
+  outline: 2px solid black;
+}
+
+.top-box {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bottom-box {
+  display: flex;
+}
+
+.top-numbers {
+  background-color: #d4bcc1;
+  display: flex;
+  outline: 2px solid black;
+}
+
+.top-numbers div {
+  font-weight: bold;
+}
+
+.left-numbers {
+  background-color: #d4bcc1;
+  outline: 2px solid black;
+}
+
+.left-numbers div {
+  font-weight: bold;
+}
+
+.game-cells {
+  outline: 2px solid rgb(0, 0, 0);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  cursor: pointer;
+  outline: 1px solid rgb(145, 97, 97);
+  transition: linear 0.5s;
+}
+
+.clicked-cell {
+  background-color: black;
+}
+
+.cross-cell {
+  background-image: url(./assets/icons/cross.svg);
+  background-size: contain;
+}
+
+.top-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  outline: 1px solid black;
+}
+
+.top-bold-cell {
+  border-left: 2px solid #ff0055;
+}
+
+.left-cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  outline: 1px solid black;
+}
+
+.left-bold-cell {
+  border-top: 2px solid #ff0055;
+}
+
+.left-cell div {
+  width: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.game-list-box {
+  width: 200px;
+}
+
+.list-title {
+  padding: 3px;
+  display: flex;
+  font-size: 30px;
+  border-radius: 20px;
+  background-color: white;
+  justify-content: center;
+}
+
+.game-list {
+  margin-top: 10px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list-item-btn {
+  border-radius: 20px;
+  border: 2px solid black;
+  padding: 5px;
+  width: 200px;
+  font-family: "Macondo", cursive;
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: rgb(248 201 209);
+  cursor: pointer;
+}
+
+footer {
+  padding: 10px 0px;
+}
+
+.level-box {
+  background-color: white;
+  margin: 5px auto;
+  width: 600px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 5px;
+  align-items: center;
+  border-radius: 25px;
+}
+
+.level-btn,
+.random-btn {
+  border-radius: 18px;
+  border: none;
+  background-color: rgb(248 201 209);
+  cursor: pointer;
+  padding: 5px 10px;
+  font-family: "Macondo", cursive;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.end-game-modal,
+.score-modal {
+  text-align: center;
+  outline: none;
+  border-radius: 20px;
+  padding: 30px 30px 10px;
+  width: 400px;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  left: 50%;
+  background-color: rgba(248 201 209);
+}
+
+.cross-modal {
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background-image: url(./assets/icons/cross.svg);
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+}
+
+.setting-box {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 470px;
+  justify-content: center;
+  gap: 5px;
+}
+
+.setting-btn {
+  outline: none;
+  border-radius: 20px;
+  border: 2px solid black;
+  background-color: rgb(218 80 104);
+  cursor: pointer;
+  padding: 5px 10px;
+  font-family: "Macondo", cursive;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.modal-btn {
+  margin-top: 20px;
+}
+
+h2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.score-list {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+  font-size: 18px;
+  flex-direction: column;
+}
+
+.day-mode {
+  cursor: pointer;
+  outline: 2px solid rgb(218 80 104);
+  border-radius: 20px;
+  background-image: url(./assets/icons/sun.svg);
+  width: 37px;
+  height: 37px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.moon {
+  background-image: url(./assets/icons/moon.svg);
+}
+
+.night-mode-backgr {
+  background-color: rgb(56, 45, 45);
+  border: 2px solid #b4a6a6;
+}
+
+.night-mode-color {
+  color: white;
+}
+
+.body-night {
+  background-image: url(./assets/images/sakura_dark_bg.jpg);
+  background-position: top;
+}
+
+.night-field {
+  background-color: #3e3737;
+  outline: 2px solid #b4a6a6;
+}
+
+.btn-active {
+  text-decoration: underline;
+  pointer-events: none;
+  background-color: rgb(255, 156, 173);
+  border: 2px solid rgb(255, 156, 173);
+  color: black;
+}
+
+.inactive {
+  pointer-events: none;
+  background-color: rgb(248, 201, 209);
+  border: 2px solid rgb(248, 201, 209);
+  border: none;
+  color: black;
+}
+
+.grey {
+  background-color: #bf9c9c;
+}
+
+.dark-grey {
+  background-color: #705e5e;
+  outline: 2px solid #241d1d;
+}
+
+.clicked-cell-night {
+  background-color: white;
+}
+
+.white-cross {
+  background-image: url(./assets/icons/white_cross.svg);
+  background-size: contain;
+}
+
+.sound-on {
+  cursor: pointer;
+  outline: 2px solid rgb(218 80 104);
+  border-radius: 20px;
+  background-image: url(./assets/icons/sound_on.svg);
+  width: 37px;
+  height: 37px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.sound-off {
+  background-image: url(./assets/icons/sound_off.svg);
+}
+
+.num {
+  cursor: pointer;
+}
+
+.red-num {
+  color: rgb(218 80 104);
+}
+
+.arrow-btn {
+  display: none;
+}
+
+@media (hover: hover) {
+  button:hover {
+    transform: scale(1.03);
+  }
+  .list-item-btn:hover {
+    background-color: rgb(255, 156, 173);
+    border: 2px solid rgb(255, 156, 173);
+  }
+
+  .level-btn:hover {
+    background-color: rgb(255, 156, 173);
+  }
+
+  .random-btn:hover {
+    background-color: rgb(255, 156, 173);
+  }
+
+  .setting-btn:hover {
+    background-color: rgb(255, 156, 173);
+  }
+
+  .night-mode-backgr:hover {
+    background-color: rgb(126, 106, 109);
+  }
+}
+
+@media only screen and (max-width: 745px) {
+  main {
+    flex-grow: 1;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  .list-title {
+    font-size: 20px;
+    padding: 5px 5px;
+    justify-content: space-around;
+  }
+  .container-box {
+    gap: 10px;
+    flex-direction: column;
+  }
+  .game-list-box {
+    width: 150px;
+  }
+  .game-list {
+    display: none;
+  }
+  .arrow-btn {
+    display: flex;
+    background-image: url(./assets/icons/arrow-down.svg);
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+
+  .arrow-close {
+    background-image: url(./assets/icons/arrow-up.svg);
+  }
+
+  .open-list {
+    display: flex;
+    margin-top: 4px;
+    gap: 2px;
+  }
+
+  .list-item-btn {
+    width: 125px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px;
+  }
+
+  .level-btn,
+  .random-btn {
+    width: auto;
+    font-size: 15px;
+  }
+
+  .level-box {
+    max-width: 480px;
+    width: 100%;
+  }
+
+  .setting-btn {
+    font-size: 15px;
+  }
+
+  .setting-box {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .sound-on,
+  .day-mode {
+    width: 30px;
+    height: 30px;
+  }
+
+  h4 {
+    width: 105px;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 485px) {
+  h1 {
+    font-size: 30px;
+  }
+  .level-box {
+    /* width: 260px; */
+    flex-wrap: wrap;
+    background-color: transparent;
+  }
+  .level-btn,
+  .random-btn {
+    font-size: 11px;
+  }
+  .setting-btn {
+    font-size: 11px;
+  }
+  .sound-on,
+  .day-mode {
+    width: 25px;
+    height: 25px;
+  }
+}
