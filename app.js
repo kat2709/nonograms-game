@@ -261,6 +261,8 @@ function clickCell(e) {
     tempArr[index] = 0;
   }
   if (arrsEqual(tempArr, checkArr)) {
+    const scoreTableBtn = document.getElementById("score-table-button");
+    scoreTableBtn.classList.remove("inactive");
     const cells = document.querySelectorAll(".cell");
     cells.forEach((cell) => cell.removeEventListener("click", clickCell));
     cells.forEach((cell) =>
@@ -518,12 +520,6 @@ function drawGame() {
   cells.forEach((cell) => cell.addEventListener("contextmenu", rightClickCell));
   const listButtons = document.querySelectorAll(".list-item-btn");
   listButtons.forEach((btn) => btn.addEventListener("click", btnsListClick));
-  // const nums = document.querySelectorAll(".num");
-  // nums.forEach((num) =>
-  //   num.addEventListener("click", () => {
-  //     num.classList.toggle("red-num");
-  //   })
-  // );
 }
 
 function arrsEqual(arr1, arr2) {
@@ -631,10 +627,10 @@ function drawFooter() {
 
   const continueGameBtn = document.createElement("button");
   continueGameBtn.classList.add("setting-btn");
-  if (JSON.parse(localStorage.getItem("saveGameObj")).flag === true) {
-    continueGameBtn.classList.remove("inactive");
-  } else {
+  if (JSON.parse(localStorage.getItem("saveGameObj")) === null) {
     continueGameBtn.classList.add("inactive");
+  } else {
+    continueGameBtn.classList.remove("inactive");
   }
   continueGameBtn.innerHTML = "continue game";
   continueGameBtn.id = "continue-game";
@@ -653,6 +649,12 @@ function drawFooter() {
 
   const scoreTableBtn = document.createElement("button");
   scoreTableBtn.classList.add("setting-btn");
+  // todo
+  if (scoreArray.length === 0) {
+    scoreTableBtn.classList.add("inactive");
+  } else {
+    scoreTableBtn.classList.remove("inactive");
+  }
   scoreTableBtn.innerHTML = "score table";
   scoreTableBtn.id = "score-table-button";
   settingBox.appendChild(scoreTableBtn);
@@ -798,7 +800,6 @@ function createGameField() {
 
 function createGameList() {
   const gameListTitle = document.createElement("div");
-  // todo
   gameListTitle.classList.add("list-title");
   if (colorMode === "dark") {
     gameListTitle.classList.add("night-mode-color");
