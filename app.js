@@ -176,6 +176,9 @@ function addListeners() {
       const cell = document.querySelectorAll(".clicked-cell");
       cell.forEach((cell) => cell.classList.remove("clicked-cell"));
       cell.forEach((cell) => cell.classList.add("clicked-cell-night"));
+      const crossCells = document.querySelectorAll(".cross-cell");
+      crossCells.forEach((cross) => cross.classList.remove("cross-cell"));
+      crossCells.forEach((cross) => cross.classList.add("white-cross"));
     }
     if (colorMode === "light") {
       const buttons = document.querySelectorAll("button");
@@ -199,6 +202,9 @@ function addListeners() {
       const cell = document.querySelectorAll(".clicked-cell-night");
       cell.forEach((cell) => cell.classList.remove("clicked-cell-night"));
       cell.forEach((cell) => cell.classList.add("clicked-cell"));
+      const crossCells = document.querySelectorAll(".white-cross");
+      crossCells.forEach((cross) => cross.classList.remove("white-cross"));
+      crossCells.forEach((cross) => cross.classList.add("cross-cell"));
     }
   });
 
