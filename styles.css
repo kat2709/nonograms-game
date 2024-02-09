@@ -163,7 +163,7 @@ h4 {
   font-family: "Macondo", cursive;
   font-size: 20px;
   text-transform: uppercase;
-  background-color: rgb(248 201 209);
+  background: rgba(248, 201, 209, 0.9);
   cursor: pointer;
 }
 
@@ -172,7 +172,7 @@ footer {
 }
 
 .level-box {
-  background-color: white;
+  background: rgba(255, 255, 255, 0.7);
   margin: 5px auto;
   width: 600px;
   display: flex;
@@ -276,7 +276,7 @@ h2 {
 }
 
 .night-mode-backgr {
-  background-color: rgb(56, 45, 45);
+  background-color: rgba(56, 45, 45, 0.7);
   border: 2px solid #b4a6a6;
 }
 
@@ -303,10 +303,10 @@ h2 {
 }
 
 .inactive {
+  outline: none;
   pointer-events: none;
   background-color: rgb(248, 201, 209);
-  border: 2px solid rgb(248, 201, 209);
-  border: none;
+  border-radius: 2px solid rgb(248, 201, 209);
   color: black;
 }
 
